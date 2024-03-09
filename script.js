@@ -7,14 +7,11 @@ async function getRandomFacts(){
             method:"GET"
         });
         let data = await res.json();
-        console.log(data.data[0]);
         openPopup(data.data[0]);
     } catch (error) {
         console.log("Error",error);
     }
 }
-// getRandomFacts();
-
 button.addEventListener("click", (event) =>{
     getRandomFacts();
 });
